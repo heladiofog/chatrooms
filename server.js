@@ -4,6 +4,10 @@ var fs = require ('fs');    //Filesystem-related functionality
 var path = require('path');        //Filesystem path funcionality
 var mime = require('mime'); //ability to derive a MIME type based on a filename extension
 var cache = {};             //cache object where chached files will be stored
+var chatServer = require('./lib/chat_server');  //custom Node module that suplies logic to handle the Socket.IO 
+
+// Starts the Socket.IO server functionality
+chatServer.listen(server);
 
 var server = http.createServer(function(request, response) {
     var filePath = false;
